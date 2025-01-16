@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "37426645899",
+    "project_id": "e-takhawal",
+    "storage_bucket": "e-takhawal.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37426645899:android:9c81ec0041fd91a405fd8e",
+        "android_client_info": {
+          "package_name": "com.example.e_takhawal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX-ewKtf6be7WEbbuqhcdvIz2-2TshM8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
