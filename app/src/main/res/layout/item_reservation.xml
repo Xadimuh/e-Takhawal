@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/border"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/text_trip_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trip details"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/text_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:paddingBottom="4dp" />
+</LinearLayout>

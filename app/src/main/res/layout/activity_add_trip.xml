@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Affichage de la carte de Dakar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+    <!-- Champs Source et Destination avec un switch sur la même ligne -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <AutoCompleteTextView
+            android:id="@+id/input_source"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Source"
+            android:padding="8dp" />
+        <ImageButton
+            android:id="@+id/reverse_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_reverse"
+            android:contentDescription="Inverser les champs"
+            android:background="?android:selectableItemBackground" />
+
+        <AutoCompleteTextView
+            android:id="@+id/input_destination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Destination"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- Champs Date et Heure -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/input_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Date (JJ/MM/AAAA)"
+            android:padding="8dp"
+            android:focusable="false" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/input_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Heure (HH:MM)"
+            android:padding="8dp"
+            android:focusable="false" />
+    </LinearLayout>
+
+    <!-- Champ Place disponible -->
+    <EditText
+        android:id="@+id/input_available_seats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Available Seats"
+        android:inputType="number" />
+
+    <!-- Champ Informations sur la voiture -->
+    <EditText
+        android:id="@+id/input_car_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Car Information"
+        android:inputType="text" />
+
+    <!-- Bouton pour ajouter le trajet -->
+    <Button
+        android:id="@+id/add_trip_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:text="Add Trip" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/trips_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="16dp"
+        android:scrollbars="vertical"
+        android:background="@drawable/recycler_background" />
+</LinearLayout>

@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_my_trips"
+        android:icon="@drawable/baseline_car_rental_24"
+        android:title="Mes trajets" />
+
+    <item
+        android:id="@+id/nav_my_reservations"
+        android:icon="@drawable/baseline_co_present_24"
+        android:title="Mes réservations" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/baseline_group_24"
+        android:title="Mon profil" />
+
+    <item
+        android:id="@+id/nav_trip_history"
+        android:icon="@drawable/baseline_group_24"
+        android:title="Historique des trajets" />
+
+    <item
+        android:id="@+id/nav_statistics"
+        android:icon="@drawable/baseline_lock_24"
+        android:title="Statistiques" />
+
+    <item
+        android:id="@+id/nav_notifications"
+        android:icon="@drawable/baseline_circle_notifications_24"
+        android:title="Notifications" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/baseline_lock_24"
+        android:title="Déconnexion" />
+</menu>

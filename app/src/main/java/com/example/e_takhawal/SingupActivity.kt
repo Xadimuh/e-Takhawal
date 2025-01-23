@@ -1,4 +1,5 @@
 package com.example.e_takhawal
+
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -13,8 +14,7 @@ import android.text.TextUtils
 import android.content.Intent
 import com.example.e_takhawal.HelperClass
 import com.example.e_takhawal.R
-import com.example.e_takhawal.SigninActivity
-
+import com.example.e_takhawal.SinginActivity
 
 class SignupActivity : AppCompatActivity() {
 
@@ -57,7 +57,7 @@ class SignupActivity : AppCompatActivity() {
             // Vérification des champs vides
             if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(username) ||
                 TextUtils.isEmpty(password) || TextUtils.isEmpty(role)) {
-                Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Tous les champs sont obligatoires !", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -66,7 +66,7 @@ class SignupActivity : AppCompatActivity() {
                     .contains(role.lowercase())) {
                 Toast.makeText(
                     this,
-                    "Invalid role! Use 'only driver', 'only passenger', 'mainly driver', or 'mainly passenger'.",
+                    "Rôle invalide ! Utilisez 'only driver', 'only passenger', 'mainly driver' ou 'mainly passenger'.",
                     Toast.LENGTH_LONG
                 ).show()
                 return@setOnClickListener
@@ -82,19 +82,19 @@ class SignupActivity : AppCompatActivity() {
             // Enregistrement dans Firebase
             reference.child(username).setValue(helperClass)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "You have signed up successfully!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, SigninActivity::class.java)
+                    Toast.makeText(this, "Vous vous êtes inscrit avec succès !", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, SinginActivity::class.java)
                     startActivity(intent)
                     finish() // Empêcher un retour à l'écran d'inscription
                 }
                 .addOnFailureListener { e ->
-                    Toast.makeText(this, "Failed to sign up: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Échec de l'inscription: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         }
 
         // Redirection vers la page de connexion
         loginRedirectText.setOnClickListener {
-            val intent = Intent(this, SigninActivity::class.java)
+            val intent = Intent(this, SinginActivity::class.java)
             startActivity(intent)
         }
     }

@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Inscrivez-vous"
+                android:text="Register"
                 android:textSize="36sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
@@ -41,8 +41,9 @@
                 android:background="@drawable/border"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Name"
-                android:drawableLeft="@drawable/baseline_email_24"
+                android:textStyle="bold"
+
+                android:hint="    Name"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
 
@@ -51,7 +52,7 @@
                 android:layout_height="50dp"
                 android:id="@+id/signup_email"
                 android:background="@drawable/border"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:padding="8dp"
                 android:hint="Email"
                 android:drawableLeft="@drawable/baseline_email_24"
@@ -64,10 +65,11 @@
                 android:layout_height="50dp"
                 android:id="@+id/signup_username"
                 android:background="@drawable/border"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:padding="8dp"
+
                 android:hint="Username"
-                android:drawableLeft="@drawable/baseline_email_24"
+                android:drawableLeft="@drawable/baseline_account_circle_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
 
@@ -76,7 +78,7 @@
                 android:layout_height="50dp"
                 android:id="@+id/signup_password"
                 android:background="@drawable/border"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:padding="8dp"
                 android:hint="Password"
                 android:inputType="textPassword"
@@ -88,9 +90,10 @@
                 android:id="@+id/signup_role"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:padding="8dp"
                 android:background="@drawable/border"
+                android:drawableLeft="@drawable/baseline_car_repair_24"
                 android:hint="Role"
                 android:textColor="@color/black"/>>
 
@@ -100,7 +103,9 @@
                 android:text="Sign Up"
                 android:id="@+id/signup_button"
                 android:textSize="18sp"
-                android:layout_marginTop="30dp"
+                android:textColor="@color/white"
+                android:background="@drawable/border"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/vert"
                 app:cornerRadius = "20dp"/>
 
@@ -113,7 +118,7 @@
                 android:padding="8dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/vert"
-                android:textSize="18sp"/>
+                android:textSize="20sp"/>
 
         </LinearLayout>
 

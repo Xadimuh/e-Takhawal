@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+
+    android:background="@color/white">
+
+    <!-- Titre du trajet -->
+    <TextView
+        android:id="@+id/text_trip_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Détails du trajet"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:paddingBottom="16dp" />
+
+    <!-- Affichage de l'origine et destination sur la même ligne -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:weightSum="2"
+        android:layout_marginBottom="8dp">
+
+        <!-- Affichage de l'origine -->
+        <TextView
+            android:id="@+id/text_source"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Source :"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/baseline_location_on_24"
+
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:paddingEnd="8dp" />
+
+        <!-- Affichage de la destination -->
+        <TextView
+            android:id="@+id/text_destination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Destination :"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:drawableLeft="@drawable/baseline_location_on_red"
+
+            android:layout_weight="1"
+            android:paddingStart="8dp" />
+
+    </LinearLayout>
+
+    <!-- Affichage de la date -->
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date :"
+        android:textSize="14sp"
+        android:drawableLeft="@drawable/baseline_calendar_month_24"
+        android:textColor="@color/black"
+        android:paddingBottom="4dp" />
+
+    <!-- Affichage de l'heure -->
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heure :"
+        android:drawableLeft="@drawable/baseline_access_time_24"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:paddingBottom="4dp" />
+
+    <!-- Affichage des places disponibles -->
+    <TextView
+        android:id="@+id/text_available_seats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Places disponibles :"
+        android:textSize="14sp"
+        android:drawableLeft="@drawable/baseline_airline_seat_recline_extra_24"
+        android:textColor="@color/black"
+        android:paddingBottom="4dp" />
+
+    <!-- Affichage des informations sur la voiture -->
+    <TextView
+        android:id="@+id/text_car_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plaque :"
+        android:drawableLeft="@drawable/baseline_car_repair_24"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:paddingBottom="16dp" />
+
+    <!-- Séparation pour une meilleure organisation -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- LinearLayout horizontal pour les boutons avec icônes -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <!-- Bouton Modifier avec icône -->
+        <Button
+            android:id="@+id/button_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modifier"
+            android:drawableLeft="@drawable/ic_edit"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:padding="8dp" />
+
+        <!-- Bouton Supprimer avec icône -->
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_delete"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:text="Supprimer"
+            android:layout_marginEnd="16dp"
+            android:padding="8dp" />
+
+        <!-- Bouton Voir les demandes avec icône -->
+        <Button
+            android:id="@+id/button_view_requests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_view_requests"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:text="Voir les demandes"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <!-- Bouton Réserver -->
+    <Button
+        android:id="@+id/button_reserve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:text="Réserver"
+        android:textColor="@color/vert"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+</LinearLayout>

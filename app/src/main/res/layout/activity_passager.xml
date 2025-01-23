@@ -1,0 +1,122 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".PassengerActivity">
+
+    <!-- Affichage de bienvenue -->
+    <TextView
+        android:id="@+id/welcome_text_passenger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue, Passager !"
+        android:textStyle="bold"
+
+        android:textSize="18sp"
+        android:paddingBottom="16dp" />
+
+    <!-- Carte pour afficher les trajets -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <!-- Formulaire de recherche -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Champs source et destination avec icônes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/input_source"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Source"
+                android:drawableStart="@drawable/baseline_location_on_red"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/reverse_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_reverse"
+                android:contentDescription="Inverser les champs"
+                android:background="?android:selectableItemBackground" />
+
+            <EditText
+                android:id="@+id/input_destination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Destination"
+                android:drawableStart="@drawable/baseline_location_on_24"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Champs date et heure -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/input_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Date (JJ/MM/AAAA)"
+                android:padding="8dp"
+                android:focusable="false" />
+
+            <EditText
+                android:id="@+id/input_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Heure (HH:MM)"
+                android:padding="8dp"
+                android:focusable="false" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rechercher"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border" />
+    </LinearLayout>
+
+    <!-- Liste des trajets trouvés -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/trips_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="16dp"
+        android:scrollbars="vertical" />
+
+    <!-- Bouton pour voir les réservations passées -->
+    <Button
+        android:id="@+id/view_reservations_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:text="Voir mes réservations" />
+</LinearLayout>

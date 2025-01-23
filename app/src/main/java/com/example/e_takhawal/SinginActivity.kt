@@ -1,7 +1,7 @@
 package com.example.e_takhawal
 
-
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 
-class SigninActivity : AppCompatActivity() {
+class SinginActivity : AppCompatActivity() {
 
     private lateinit var loginUsername: EditText
     private lateinit var loginPassword: EditText
@@ -51,26 +51,42 @@ class SigninActivity : AppCompatActivity() {
                         if (dbPassword == password) {
                             // Connexion réussie
                             val role = snapshot.child("role").value.toString()
-                            Toast.makeText(this@SigninActivity, "Welcome, $username! Role: $role", Toast.LENGTH_SHORT).show()
 
-                            // Redirection vers l'écran principal ou un autre écran
-                            val intent = Intent(this@SigninActivity, MainActivity::class.java)
-                            intent.putExtra("username", username)
-                            intent.putExtra("role", role)
-                            startActivity(intent)
-                            finish()
+                            // Enregistrer l'utilisateur dans SharedPreferences
+                            val sharedPreferences = getSharedPreferences("user_preferences", MODE_PRIVATE)
+                            val editor = sharedPreferences.edit()
+                            editor.putString("current_user", username)  // Stocker le nom d'utilisateur
+                            editor.apply()
+
+                            // Redirection vers l'écran en fonction du rôle
+                            when (role) {
+                                "only driver", "mainly driver" -> {
+                                    val intent = Intent(this@SinginActivity, DriverActivity::class.java)
+                                    intent.putExtra("username", username)
+                                    startActivity(intent)
+                                }
+                                "only passenger", "mainly passenger" -> {
+                                    val intent = Intent(this@SinginActivity, PassengerActivity::class.java)
+                                    intent.putExtra("username", username)
+                                    startActivity(intent)
+                                }
+                                else -> {
+                                    Toast.makeText(this@SinginActivity, "Invalid role: $role", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            finish() // Terminer cette activité
                         } else {
                             // Mot de passe incorrect
-                            Toast.makeText(this@SigninActivity, "Incorrect password", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@SinginActivity, "Incorrect password", Toast.LENGTH_SHORT).show()
                         }
                     } else {
                         // L'utilisateur n'existe pas
-                        Toast.makeText(this@SigninActivity, "User not found", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SinginActivity, "User not found", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(this@SigninActivity, "Database error: ${error.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SinginActivity, "Database error: ${error.message}", Toast.LENGTH_SHORT).show()
                 }
             })
         }
